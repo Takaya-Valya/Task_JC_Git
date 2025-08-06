@@ -11,6 +11,11 @@ gslm_path = os.path.join(ROOT, 'lib', 'gslab_make')
 sys.path.append(gslm_path)
 import gslab_make as gs
 
+# Inject the conda path into the script's environment (adjust if your install path is different)
+conda_path = r'C:\Users\User\miniconda3\Scripts'
+if conda_path not in os.environ["PATH"]:
+    os.environ["PATH"] += ';' + conda_path
+
 ### PULL PATHS FROM CONFIG
 PATHS = {
     'root': ROOT,
